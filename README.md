@@ -4,7 +4,7 @@
 
 Ankara'daki elit diş klinikleri için ücretsiz, SEO dostu ve mobil uyumlu web sitesi şablonu. Bootstrap 5 ile geliştirildi, birkaç saniyede klonlayıp çalıştırabilirsiniz!
 
-**[Canlı Demoyu Görün](https://ak-hosting.github.io/ak-dental/)** | **[Destek için İletişime Geçin](mailto:ak@ak-pro.com)**
+**[🚀 Canlı Demo](https://ak-hosting.github.io/ak-dental/)** | **[📧 Destek için İletişime Geçin](mailto:ak@ak-pro.com)**
 
 ## 🚀 Özellikler
 
