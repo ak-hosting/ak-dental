@@ -1,0 +1,85 @@
+# AK Dental - Docker Compose Configuration
+# Easy deployment for development and production
+
+version: '3.8'
+
+services:
+  # Main web application
+  ak-dental:
+    build: .
+    container_name: ak-dental-web
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=production
+      - PORT=8000
+    volumes:
+      - ./assets:/app/assets
+      - ./uploads:/app/uploads
+    restart: unless-stopped
+    networks:
+      - ak-dental-network
+
+  # Alternative: Simple Python server
+  ak-dental-simple:
+    image: python:3.9-alpine
+    container_name: ak-dental-simple
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: ["python", "-m", "http.server", "8000"]
+    restart: unless-stopped
+    networks:
+      - ak-dental-network
+
+  # Nginx reverse proxy (optional)
+  nginx:
+    image: nginx:alpine
+    container_name: ak-dental-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
+    depends_on:
+      - ak-dental
+    restart: unless-stopped
+    networks:
+      - ak-dental-network
+
+  # Mail server for testing (optional)
+  mailhog:
+    image: mailhog/mailhog
+    container_name: ak-dental-mail
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    restart: unless-stopped
+    networks:
+      - ak-dental-network
+
+networks:
+  ak-dental-network:
+    driver: bridge
+
+# Development configuration
+# Uncomment the following lines for development
+# services:
+#   ak-dental-dev:
+#     build: .
+#     container_name: ak-dental-dev
+#     ports:
+#       - "3000:3000"
+#     environment:
+#       - NODE_ENV=development
+#       - DEBUG=true
+#     volumes:
+#       - .:/app
+#       - /app/node_modules
+#     command: ["npm", "run", "dev"]
+#     restart: unless-stopped
+#     networks:
+#       - ak-dental-network 
