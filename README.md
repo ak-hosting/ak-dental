@@ -24,6 +24,8 @@ Ankara'daki elit diş klinikleri için ücretsiz, SEO dostu ve mobil uyumlu web 
 ![Hizmetler](assets/images/screenshot-services.png)
 ![İletişim](assets/images/screenshot-contact.png)
 
+> **Not**: Tüm görseller ücretsiz ve ticari kullanıma uygun Unsplash kaynaklarından alınmıştır. Kullanıcılar kendi klinik görselleriyle değiştirebilirler.
+
 ## 📜 Kredi Zorunluluğu
 
 Bu şablonu kullanıyorsanız, lütfen footer'da şu ibareyi ekleyin:
