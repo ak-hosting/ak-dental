@@ -1,0 +1,68 @@
+# AK Dental - GitHub Pages Configuration
+
+# Site settings
+title: AK Dental - Ankara Elit Diş Kliniği
+description: Ankara'daki elit diş klinikleri için ücretsiz web sitesi şablonu
+url: https://ak-hosting.github.io
+baseurl: /ak-dental
+
+# Author information
+author:
+  name: a.koc
+  email: ak@ak-pro.com
+  url: https://github.com/ak-hosting
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Collections
+collections:
+  _posts:
+    output: true
+    permalink: /:collection/:name/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .github
+  - Dockerfile
+  - docker-compose.yml
+  - docker-compose.simple.yml
+  - nginx.conf
+  - package.json
+  - env.example
+  - DOCKER.md
+  - CUSTOMIZATION.md
+  - LICENSE
+  - .gitignore
+
+# Include in processing
+include:
+  - _pages
+  - _posts
+  - assets
+  - images
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "a.koc"
+      comments: true
+      share: true
+      related: true 
